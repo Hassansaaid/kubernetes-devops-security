@@ -22,7 +22,7 @@ pipeline {
     stage('build docker image'){
       steps{
         sh "printenv"
-        sh "docker build . -t hassan/devsecops"
+        sh "docker build . -t hassan/devsecops:$GIT_COMMIT"
       }
     }
     }
