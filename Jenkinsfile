@@ -18,7 +18,12 @@ pipeline {
           jacoco execPattern: 'target/jacoco.exec'
         }
       } 
-        }
+     }
+    stage('build docker image'){
+      steps{
+        sh "docker build . -t hassan/devsecops"
+      }
+    }
     }
   
 }
