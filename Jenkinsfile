@@ -21,7 +21,7 @@ pipeline {
      }
     stage('build docker image'){
       steps{
-        sh "docker build . -t hassan/devsecops"
+        sh "sudo docker build . -t hassan/devsecops"
       }
     }
     }
