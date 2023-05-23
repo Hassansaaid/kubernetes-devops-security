@@ -32,7 +32,8 @@ pipeline {
       steps{
         withKubeConfig([credentialsId: "KUBECONFIG-1"]){
           sh "sed -i 's#reolace#hassansaaid/devsecops:${GIT_COMMIT}#g' k8s_deployment_service.yaml"
-          sh "/home/cloud_user/kubectl apply -f k8s_deployment_service.yaml"
+          sh "sudo su cloud_user"
+          sh "kubectl apply -f k8s_deployment_service.yaml"
         }
       }
     }
