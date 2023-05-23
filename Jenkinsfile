@@ -21,7 +21,7 @@ pipeline {
      }
     stage('build docker image'){
       steps{
-        with.DockerRegistry([credentialsId: "DOCKER-HUB",url:""]){
+        withDockerRegistry([credentialsId: "DOCKER-HUB",url:""]){
         sh "printenv"
         sh "docker build . -t hassan/devsecops:""$GIT_COMMIT"""
         sh "docker push hassan/devsecops:""$GIT_COMMIT"""
