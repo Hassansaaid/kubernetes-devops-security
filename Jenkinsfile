@@ -38,7 +38,7 @@ pipeline {
           sh "mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH"
           sh "echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc"
           sh " kubectl version --short --client"
-          sh "kubectl --kubeconfig=kubeconfig.yml apply -f k8s_deployment_service.yaml"
+          sh "./kubectl --kubeconfig=kubeconfig.yml apply -f k8s_deployment_service.yaml"
       }
     }
     }
