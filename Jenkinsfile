@@ -34,7 +34,7 @@ pipeline {
         withKubeConfig([credentialsId: "KUBECONFIG-1"]){
           sh "sed -i 's#reolace#hassansaaid/devsecops:${GIT_COMMIT}#g' k8s_deployment_service.yaml"
           sh "pwd"
-          sh "kubectl apply -f k8s_deployment_service.yaml"
+          sh "kubectl -- kubeconfig=kubeconfig.yml apply -f k8s_deployment_service.yaml"
         }
       }
     }
