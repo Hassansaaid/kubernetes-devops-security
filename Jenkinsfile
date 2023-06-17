@@ -4,7 +4,7 @@ pipeline {
   stages {
       stage('Build Artifact') {
             steps {
-              sh "ls"
+              sh "ls -a"
               sh "mvn clean package -DskipTests=true"
               archive 'target/*.jar' // hassan changes 
             }
